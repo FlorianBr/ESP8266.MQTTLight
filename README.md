@@ -37,23 +37,25 @@ WiFi credentials (SSID and pass) are hardcoded in secrets.h. The MQTT broker add
 
 When started, the lamp will send its status to MQTT and can receive the following commands send to the /cmd subtopic:
 
-- Set the base color for effects (not always used) with { "setbasecolor": [255,255,0] }
+- Set the color 1 for effects (not always used) with { "setcolor1": [255,255,0] }
+- Set the color 2 for effects (not always used) with { "setcolor2": [255,255,0] }
 - Set the delay for effects to slow down or speed up: { "setdelay": 1000 }
+- Set the brightness: { "setbright": 100 }
 - Set the color pattern to use { "setpattern": 1 }
-  - 0 .. Solid Basecolor
+  - 0 .. Solid Color 1
   - 1 .. Rainbow Effect
-  - 2 .. Gradient White to Basecolor
-  - 3 .. Gradient Black to Basecolor
-  - 4 .. Single Dot with Basecolor
-  - 5 .. Smoothed Dot with Basecolor
+  - 2 .. Gradient White to Color 1
+  - 3 .. Gradient Black to Color 1
+  - 4 .. Gradient from Color 1 to Color 2
+  - 5 .. Single Dot with Color 1
+  - 6 .. Smoothed Dot with Color 1
 - Set the color effect with { "seteffect": 1 }
   - 0 .. No effect
   - 1 .. Breathe
   - 2 .. Breathe with pause
   - 3 .. Rotate
   - 4 .. Glitter
-  - 5 .. Add some noise
-  - 6 .. Randomizer (fire effect)
+  - 5 .. Randomizer (fire-ish effect)
 
 ## Todos
 
